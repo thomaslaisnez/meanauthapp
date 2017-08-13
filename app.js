@@ -38,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //body parser middleware
 app.use(bodyParser.json());
 
+//use /users for all user routes
 app.use('/users', users);
 
 //one route to home page
