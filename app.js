@@ -38,6 +38,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //body parser middleware
 app.use(bodyParser.json());
 
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 //use /users for all user routes
 app.use('/users', users);
 
@@ -48,5 +54,5 @@ app.get('/', function(req, res) {
 
 //listen function to get port and start the server
 app.listen(port, function() {
-    console.log('Server started on port '+port);
+    console.log("info", 'The server started on port '+port);
 });
