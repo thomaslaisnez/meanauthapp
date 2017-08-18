@@ -26,8 +26,8 @@ const app = express();
 //for the routes
 const users = require('./routes/users');
 
-//setting port 
-const port = 3000;
+//setting port 3000 for local
+const port = process.env.port || 8080;
 
 //enable cors so the backend accepts request from other domains (in case backend and frontend run on a different port for instance)
 app.use(cors());
