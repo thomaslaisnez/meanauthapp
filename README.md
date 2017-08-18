@@ -5,4 +5,4 @@ My MEAN Stack application
 made with Angular-CLI, Express back-end, MongoDB database. It has authorization, so you need to be logged in to get to the
 profile and dashboard pages.*
 
-Link: https://peaceful-meadow-49847.herokuapp.com/profile
+Link: https://peaceful-meadow-49847.herokuapp.com/
