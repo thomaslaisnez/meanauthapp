@@ -9,7 +9,6 @@ const Quote =  require('../models/quote');
 
 // changeQuote
 router.put('/changequote', function(req, res, next){
-    console.log(req.body.quote + " routes");
 
     let newQuote = new Quote({
         quote: req.body.quote,
@@ -27,9 +26,7 @@ router.put('/changequote', function(req, res, next){
 
 // getQuote
 router.get('/quote', function(req, res, next){
-    //console.log(Quote.getQuote() + " route");
     let thisQuote = Quote.getQuote(function (err, obj){
-        console.log(obj);
         res.json({quote: obj});
     });
     

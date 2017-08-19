@@ -28,8 +28,8 @@ const users = require('./routes/users');
 const quote = require('./routes/quote');
 
 //setting port 3000 for local
-//const port = process.env.PORT || 8080;
-const port = 3000;
+const port = process.env.PORT || 8080;
+//const port = 3000;
 
 //enable cors so the backend accepts request from other domains (in case backend and frontend run on a different port for instance)
 app.use(cors());
