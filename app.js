@@ -25,9 +25,11 @@ const app = express();
 
 //for the routes
 const users = require('./routes/users');
+const quote = require('./routes/quote');
 
 //setting port 3000 for local
-const port = process.env.PORT || 8080;
+//const port = process.env.PORT || 8080;
+const port = 3000;
 
 //enable cors so the backend accepts request from other domains (in case backend and frontend run on a different port for instance)
 app.use(cors());
@@ -46,6 +48,9 @@ require('./config/passport')(passport);
 
 //use /users for all user routes
 app.use('/users', users);
+
+//use /quote for all quote routes
+app.use('/quote', quote)
 
 //one route to home page
 app.get('/', function(req, res) {

@@ -1,2 +1,15 @@
 <h2 class="page-header">Dashboard</h2>
 <p customColor>Welcome to your dashboard</p>
+<br><br><br>
+
+<h2 *ngIf="quoteObj">{{quoteObj.quote}}</h2>
+
+<br><br>
+<p>Set your own quote:</p>
+<form (submit)="onSubmitQuote()">
+    <div class="form-group">
+      <label>Quote</label>
+      <input type="text" class="form-control" id="quoteField" [(ngModel)]="quoteField" name="quoteField">
+    </div>
+    <input type="submit" class="btn btn-primary" id="quoteButton" value="Set quote">
+  </form>

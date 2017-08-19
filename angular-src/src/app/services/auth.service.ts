@@ -36,6 +36,16 @@ export class AuthService {
       .map(res => res.json());
   }
 
+  getQuote(){
+    //console.log("test");
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    //console.log("what is this", this.http.get('quote/quote', {headers: headers})
+    //.map(res => res.json()));
+    return this.http.get('quote/quote', {headers: headers})
+      .map(res => res.json());
+  }
+
   storeUserData(token, user){
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
@@ -56,5 +66,15 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  setQuote(newQuote){
+    //console.log("setquote auth.service ", quote);
+    //let body = "{ " + "\"quote\"" + " = " + "\"" + quote + "\" }";
+    //console.log(body);
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('quote/changequote', JSON.stringify({quote: newQuote}), {headers: headers})
+      .map(res => res.json());
   }
 }
